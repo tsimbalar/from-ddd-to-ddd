@@ -4,16 +4,23 @@
 ## About this talk
 - My experience as a software developer
 - All the steps in the learning process
-- Hopefully you learn from my mistake
+- Hopefully you learn from my mistakes
 
 not so much about the "strategic side" really more about "tactical" in the trenches
 
 # The beginning
 
 Freshly graduated
-Learnt how to program (or so I thought) in Java / OO
+Learnt how to program (or so I thought) in Java / OO / Design patterns ... 
+actually started with Microsoft stack during internship
 
 ## Omnipotent Relational Db
+e-commerce custom apps 
+- public site (ASP.NET)
+- admin site (ASP Classic / VbScript)
+
+stored procedures only, no queries in code
+
 app is a wrapper around Stored Procedures ... 
 (classic ASP / VbScript .... early .NET)
 
@@ -21,11 +28,13 @@ View + Db (= data + Busines logic)
 
 integration through the database (Front + Admin)
 
+maintenance / source control of the database (hint : it's hard !)
+
 it actually works "fine" when 
 - mostly alone on a project (you can fit it all in **your** head)
 - small project (you can fit it **all** in your head)
 - initial version
-- mostly read
+- mostly read (e-commerce catalogue)
 
 It really sucks for :
 - evolutions to schema / stored procedure
@@ -35,22 +44,30 @@ It really sucks for :
 you tend to over-engineer things "just in case" / not change stuff that should change ... 
 Big design up front
 
+the process : come up with a data model (tables , relationships etc)
+
 Db first sort of design
+
+add in translations / history and it gets funky :)
 
 -----
 other experience
 the Database change committee ... 
+there is ONE database / shared between apps , replicated 
+rows have a double id (sqlId / incId) -> used for replication + db generated IDs.
+
+db is shared 
+many tables / many columns ... because it must model reality universally !
 
 app doesn't own the db ... 
 shared between apps (and replicated) 
 it takes weeks to ask for a change
 better over-engineer it when designing it !
 
-
 ---
 Shared library that really just calls to Stored Procedure ... 
-
-variations : gnerated Db access code (Linq2Sql)
+"the SDK"
+variations : generated Db access code (Linq2Sql / EF Db-first)
 
 -----------------------
 Let's move the logic out of the Db !
@@ -85,12 +102,14 @@ Code first
 
 Object graphs are loaded, sometimes navigation properties are filled, smetimes they are not ... 
 
+Transaction Service ... 
+
 
 --------
 Aggregates
 
 clearly cut the object graphs and avoid potential cycles in objet graphs ...
-Clarify the entry point
+Clarify the entry point by only exposing the "official ones" in DbContext.
 
 ------
 Aggregate root / proper domain model
