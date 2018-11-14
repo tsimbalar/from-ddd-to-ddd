@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E4C01C60-294E-4E5C-A6D9-B03A03F28C1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BAEC7C7A-673E-4B59-A340-F06B62EDF725}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{FEBC0E2A-0BBF-4E08-B7F7-E94FF54F317A}"
+	ProjectSection(SolutionItems) = preProject
+		assets\Generate-northwind-db.sql = assets\Generate-northwind-db.sql
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{770CB892-5A34-4413-AB27-B2EB7B648710}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{770CB892-5A34-4413-AB27-B2EB7B648710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{770CB892-5A34-4413-AB27-B2EB7B648710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{770CB892-5A34-4413-AB27-B2EB7B648710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{770CB892-5A34-4413-AB27-B2EB7B648710}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{770CB892-5A34-4413-AB27-B2EB7B648710} = {E4C01C60-294E-4E5C-A6D9-B03A03F28C1F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65CD8714-AF26-4D13-9136-1F55B8D6B556}
+	EndGlobalSection
+EndGlobal
